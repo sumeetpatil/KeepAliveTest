@@ -1,11 +1,11 @@
 # Eclipse
-.classpath
-.project
-.settings/
+keepalivetest/.classpath
+keepalivetest/.project
+keepalivetest/.settings/
  
 # Mac
 .DS_Store
- 
+keepalivetest/.DS_Store 
 # Maven
-log/
-target/
+keepalivetest/log/
+keepalivetest/target/
