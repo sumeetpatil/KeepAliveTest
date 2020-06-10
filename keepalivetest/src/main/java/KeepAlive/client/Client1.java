@@ -6,14 +6,16 @@ import java.net.HttpURLConnection;
 import java.net.URI;
 import org.eclipse.jetty.http.HttpMethod;
 
-public class Client {
+public class Client1 {
 
   public static void main(String args[]) {
-    Client client = new Client();
+    Client1 client = new Client1();
     client.run();
   }
 
   public void run() {
+    System.out.println("Client1 start");
+
     HttpURLConnection connection = null;
     URI uri;
     try {
@@ -36,5 +38,7 @@ public class Client {
     } catch (Exception e) {
       e.printStackTrace();
     }
+
+    System.out.println("Client1 end");
   }
 }

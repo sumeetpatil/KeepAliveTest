@@ -13,17 +13,18 @@ public class MyServlet extends HttpServlet {
   protected void doGet(HttpServletRequest request, HttpServletResponse response)
       throws ServletException, IOException {
 
-    response.setContentType("application/json");
-    response.setStatus(HttpServletResponse.SC_OK);
-    response.getWriter().println("{ \"status\": \"ok\"}");
+    System.out.println("doGet Start");
 
     try {
       Thread.sleep(10 * 60 * 1000);
     } catch (InterruptedException e) {
-      // TODO Auto-generated catch block
       e.printStackTrace();
     }
 
-    System.out.println("Done");
+    response.setContentType("application/json");
+    response.setStatus(HttpServletResponse.SC_OK);
+    response.getWriter().println("{ \"status\": \"ok\"}");
+
+    System.out.println("doGet Done");
   }
 }
