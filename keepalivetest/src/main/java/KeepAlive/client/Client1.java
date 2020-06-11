@@ -1,6 +1,7 @@
 package KeepAlive.client;
 
 import java.io.BufferedReader;
+import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URI;
@@ -16,6 +17,7 @@ public class Client1 {
   public void run() {
     System.out.println("Client1 start");
 
+    BufferedReader reader = null;
     HttpURLConnection connection = null;
     URI uri;
     try {
@@ -25,7 +27,6 @@ public class Client1 {
       connection.setRequestMethod(HttpMethod.GET.name());
       connection.connect();
       StringBuilder stringBuilder;
-      BufferedReader reader = null;
       reader = new BufferedReader(new InputStreamReader(connection.getInputStream()));
       stringBuilder = new StringBuilder();
 
@@ -37,6 +38,14 @@ public class Client1 {
       System.out.println("Got the response - " + stringBuilder.toString());
     } catch (Exception e) {
       e.printStackTrace();
+    } finally {
+      if (reader != null) {
+        try {
+          reader.close();
+        } catch (IOException ioe) {
+          ioe.printStackTrace();
+        }
+      }
     }
 
     System.out.println("Client1 end");
