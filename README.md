@@ -35,7 +35,7 @@ net.inet.tcp.keepcnt: 8
 ````
 
 ## Working process (Got this from [Stackoverflow](https://stackoverflow.com/questions/1480236/does-a-tcp-socket-connection-have-a-keep-alive#:~:text=Keep%2Dalive%20packets%20MUST%20only,too%20long%20for%20most%20applications.))
-1. Client opens a TCP Conn
+1. Client opens a TCP Connection
 2. If the connection is silent for net.inet.tcp.keepidle(tcp_keepalive_time) seconds, send a single empty ACK packet
 3. Did the server respond with a corresponding ACK of its own?
    -  **YES** - > Return to step 2
