@@ -9,9 +9,9 @@ curl -vv http://localhost:8090/status --keepalive-time 10
 tcpdump -i lo0 port 8090 (For Mac), Use tcpdump -D to get the network interface
 
 ## Working Example
-- The socket API (java and apache) traditionally does not support to configure the keepalive times, they only allow to turn it on.
-- Used the below code to set Socket Config
-- Changed the OS level params. Config shown below is for MacOS. The configuraion is in milliseconds
+1. The socket API (java and apache) traditionally does not support to configure the keepalive times, they only allow to turn it on.
+2. Used the below code to set Socket Config
+3. Changed the OS level params. Config shown below is for MacOS. The configuraion is in milliseconds
 
 ```
 SocketConfig socketConfig = SocketConfig.custom().setSoKeepAlive(true).build();
@@ -30,11 +30,11 @@ net.inet.tcp.keepcnt: 8
 ````
 
 ## Working process (Got this from [Stackoverflow](https://stackoverflow.com/questions/1480236/does-a-tcp-socket-connection-have-a-keep-alive#:~:text=Keep%2Dalive%20packets%20MUST%20only,too%20long%20for%20most%20applications.)) -
-- Client opens a TCP Conn
-- If the connection is silent for net.inet.tcp.keepidle(tcp_keepalive_time) seconds, send a single empty ACK packet
-- Did the server respond with a corresponding ACK of its own?
-- **YES** - > Return to step 2
-- **NO**  - > Wait net.inet.tcp.keepintvl(tcp_keepalive_intvl) seconds, then send another ACK. Repeat until the number of ACK probes that have been sent equals net.inet.tcp.keepcnt(tcp_keep_alive_probes). If no response has been received at this point, send a RST and terminate the connection.
+1. Client opens a TCP Conn
+2. If the connection is silent for net.inet.tcp.keepidle(tcp_keepalive_time) seconds, send a single empty ACK packet
+3. Did the server respond with a corresponding ACK of its own?
+4. **YES** - > Return to step 2
+5. **NO**  - > Wait net.inet.tcp.keepintvl(tcp_keepalive_intvl) seconds, then send another ACK. Repeat until the number of ACK probes that have been sent equals net.inet.tcp.keepcnt(tcp_keep_alive_probes). If no response has been received at this point, send a RST and terminate the connection.
 
 
 ## References 
