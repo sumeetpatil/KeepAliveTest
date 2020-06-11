@@ -1,5 +1,5 @@
 # KeepAliveTest
-Test to check keep alive in java
+Test to check keep alive probes in java
 
 
 ## Curl to see keepalives
