@@ -29,7 +29,7 @@ net.inet.tcp.keepcnt: 8
 > sudo sysctl -w net.inet.tcp.keepcnt=10
 ````
 
-Working process (Got this from [Stackoverflow](https://stackoverflow.com/questions/1480236/does-a-tcp-socket-connection-have-a-keep-alive#:~:text=Keep%2Dalive%20packets%20MUST%20only,too%20long%20for%20most%20applications.)) -
+#### Working process (Got this from [Stackoverflow](https://stackoverflow.com/questions/1480236/does-a-tcp-socket-connection-have-a-keep-alive#:~:text=Keep%2Dalive%20packets%20MUST%20only,too%20long%20for%20most%20applications.)) -
 - Client opens a TCP Conn
 - If the connection is silent for net.inet.tcp.keepidle(tcp_keepalive_time) seconds, send a single empty ACK packet
 - Did the server respond with a corresponding ACK of its own?
