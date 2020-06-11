@@ -34,7 +34,7 @@ net.inet.tcp.keepintvl: 75000
 net.inet.tcp.keepcnt: 8
 ````
 
-## Working process (Got this from [Stackoverflow](https://stackoverflow.com/questions/1480236/does-a-tcp-socket-connection-have-a-keep-alive#:~:text=Keep%2Dalive%20packets%20MUST%20only,too%20long%20for%20most%20applications.))
+## Working process (Got this from [Stackoverflow](https://stackoverflow.com/questions/1480236/does-a-tcp-socket-connection-have-a-keep-alive#:~:text=Keep-Alive%20Process))
 1. Client opens a TCP Connection
 2. If the connection is silent for net.inet.tcp.keepidle(tcp_keepalive_time) seconds, send a single empty ACK packet
 3. Did the server respond with a corresponding ACK of its own?
@@ -49,4 +49,4 @@ net.inet.tcp.keepcnt: 8
 - http://mail-archives.apache.org/mod_mbox/hc-httpclient-users/201605.mbox/%3CCABNS0sUrTU1FvWVAN3TqaGqAbZgKWvNQmoj5ZBEce_FLJL1QYg@mail.gmail.com%3E
 - https://bugs.openjdk.java.net/browse/JDK-4143518
 - [Setting keepalives on OS level](https://www.gnugk.org/keepalive.html)
-- [Info on keep alive OS params](https://stackoverflow.com/questions/1480236/does-a-tcp-socket-connection-have-a-keep-alive#:~:text=Keep%2Dalive%20packets%20MUST%20only,too%20long%20for%20most%20applications.)
+- [Info on keep alive OS params](https://stackoverflow.com/questions/1480236/does-a-tcp-socket-connection-have-a-keep-alive#:~:text=Keep-Alive%20Process)
