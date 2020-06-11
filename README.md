@@ -5,7 +5,7 @@ Test to check keep alive in java
 ## Curl to see keepalives
 curl -vv http://localhost:8090/status --keepalive-time 10
 
-## TCP dump command 
+## TCP dump command to check keep alive packets. Use wireshark to get more insights.
 tcpdump -i lo0 port 8090 (For Mac), Use tcpdump -D to get the network interface
 
 ## Working Example
