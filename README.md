@@ -33,8 +33,8 @@ net.inet.tcp.keepcnt: 8
 - Client opens a TCP Conn
 - If the connection is silent for net.inet.tcp.keepidle(tcp_keepalive_time) seconds, send a single empty ACK packet
 - Did the server respond with a corresponding ACK of its own?
-- YES - > Return to step 2
-- NO  - > Wait net.inet.tcp.keepintvl(tcp_keepalive_intvl) seconds, then send another ACK. Repeat until the number of ACK probes that have been sent equals net.inet.tcp.keepcnt(tcp_keep_alive_probes). If no response has been received at this point, send a RST and terminate the connection.
+- **YES** - > Return to step 2
+- **NO**  - > Wait net.inet.tcp.keepintvl(tcp_keepalive_intvl) seconds, then send another ACK. Repeat until the number of ACK probes that have been sent equals net.inet.tcp.keepcnt(tcp_keep_alive_probes). If no response has been received at this point, send a RST and terminate the connection.
 
 
 #### References 
