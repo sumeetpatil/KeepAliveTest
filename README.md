@@ -25,8 +25,10 @@ net.inet.tcp.keepintvl: 75000
 net.inet.tcp.keepcnt: 8
 
 > sudo sysctl -w net.inet.tcp.keepidle=60000
-> sudo sysctl -w net.inet.tcp.keepintvl=75000
-> sudo sysctl -w net.inet.tcp.keepcnt=8
+> sysctl net.inet.tcp | grep -E "keepidle|keepintvl|keepcnt"
+net.inet.tcp.keepidle: 60000
+net.inet.tcp.keepintvl: 75000
+net.inet.tcp.keepcnt: 8
 ````
 
 ## Working process (Got this from [Stackoverflow](https://stackoverflow.com/questions/1480236/does-a-tcp-socket-connection-have-a-keep-alive#:~:text=Keep%2Dalive%20packets%20MUST%20only,too%20long%20for%20most%20applications.))
