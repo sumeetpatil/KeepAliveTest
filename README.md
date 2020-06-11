@@ -2,7 +2,7 @@
 Test to check keep alive probes in java
 
 ## Problem Statement
-Long running http requests in java cause packet drops due to firewall configuration tcp timeout. To make this work we need to send keep alives probes from the client. 
+Long running java http requests to server cause packet drops due to firewall configuration tcp timeout
 
 ## Curl to see keepalives in tcpdump/wireshark
 curl -vv http://localhost:8090/status --keepalive-time 10
@@ -11,9 +11,10 @@ curl -vv http://localhost:8090/status --keepalive-time 10
 tcpdump -i lo0 port 8090 (For Mac), Use tcpdump -D to get the network interface
 
 ## Solution
-1. The socket API (java and apache) traditionally does not support to configure the keepalive times, they only allow to turn it on.
-2. Used the below code to turn on keepalive
-3. Changed the OS level params. Config shown below is for MacOS. The configuraion is in milliseconds
+1. Sending keep-alive probes will keep the connection alive. Which is seen in curl command.
+2. The socket API (java and apache) traditionally does not support to configure the keepalive times, they only allow to turn it on.
+3. Used the below code to turn on keepalive in java using apache http client
+4. Changed the OS level params. Config shown below is for MacOS. The configuraion is in milliseconds
 
 ```
 SocketConfig socketConfig = SocketConfig.custom().setSoKeepAlive(true).build();
