@@ -12,7 +12,7 @@ tcpdump -i lo0 port 8090 (For Mac), Use tcpdump -D to get the network interface
 
 ## Solution
 1. The socket API (java and apache) traditionally does not support to configure the keepalive times, they only allow to turn it on.
-2. Used the below code to set Socket Config
+2. Used the below code to turn on keepalive
 3. Changed the OS level params. Config shown below is for MacOS. The configuraion is in milliseconds
 
 ```
