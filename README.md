@@ -50,3 +50,6 @@ net.inet.tcp.keepcnt: 8
 - https://bugs.openjdk.java.net/browse/JDK-4143518
 - [Setting keepalives on OS level](https://www.gnugk.org/keepalive.html)
 - [Info on keep alive OS params](https://stackoverflow.com/questions/1480236/does-a-tcp-socket-connection-have-a-keep-alive#:~:text=Keep-Alive%20Process)
+
+## Open questions
+1. Impact of chaning the OS level params?
