@@ -5,7 +5,7 @@ Test to check keep alive probes in java
 Long running java http requests to server cause packet drops due to firewall configuration tcp timeout
 
 ## Curl to see keepalives in tcpdump/wireshark
-curl -vv http://localhost:8090/status --keepalive-time 10
+curl -vv http://localhost:8090/status --keepalive-time 10 #default 60seconds
 
 ## TCP dump command to check keep alive packets. Use wireshark to get more insights.
 tcpdump -i lo0 port 8090 (For Mac), Use tcpdump -D to get the network interface
